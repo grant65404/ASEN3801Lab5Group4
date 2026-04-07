@@ -8,14 +8,14 @@ arguments
         fig = 1:1:6; % optional
         col = 'b'; % optional 
         bool = 0;   % optional
-        leg = "";
+        leg = ""; % optional
     end
 set(groot,'defaultAxesXGrid','on') % setting grids on for all plots
 set(groot,'defaultAxesYGrid','on')
 set(groot,'defaultAxesZGrid','on')
 
 figure(fig(1)); % the first figure containing inertial position
-sgtitle("Intertial Position")
+sgtitle("Intertial Position") % large title for subplots
 subplot(3,1,1);
 plot(time, aircraft_state_array(1,:), col, linewidth=1.3); hold on;
 title("x position");
@@ -31,13 +31,13 @@ plot(time,aircraft_state_array(3,:),col, linewidth=1.3); hold on; % negative z
 title("-z position")
 xlabel("time (s)");
 ylabel("dist. (m)");
-if bool==true
+if bool==true % if user wants to save plots, plots save
     f = gcf;
-    f.WindowState = 'maximized'; 
+    f.WindowState = 'maximized'; % fullscreen plot
     pause(0.5); 
-    exportgraphics(f, "task2p2fig"+ num2str(fig(1)) +".png", 'Resolution', 300);
+    exportgraphics(f, "figure"+ num2str(fig(1)) +".png", 'Resolution', 300);
 end
-if leg ~= ""
+if leg ~= "" % if the user inputs a legend name it places it in an ideal spot
     legend(leg,'Position',[0.633841768165843 0.899580306092237 0.205357139451163 0.0773809503941308])
 end
 figure(fig(2));
@@ -61,7 +61,7 @@ if bool==true
     f = gcf;
     f.WindowState = 'maximized'; 
     pause(0.5); 
-    exportgraphics(f, "task2p2fig"+num2str(fig(2))+".png", 'Resolution', 300);
+    exportgraphics(f, "figure"+num2str(fig(2))+".png", 'Resolution', 300);
 end
 if leg ~= ""
     legend(leg,'Position',[0.633841768165843 0.899580306092237 0.205357139451163 0.0773809503941308])
@@ -87,7 +87,7 @@ if bool==true
     f = gcf;
     f.WindowState = 'maximized'; 
     pause(0.5); 
-    exportgraphics(f, "task2p2fig"+num2str(fig(3))+".png", 'Resolution', 300);
+    exportgraphics(f, "figure"+num2str(fig(3))+".png", 'Resolution', 300);
 end
 if leg ~= ""
     legend(leg,'Position',[0.633841768165843 0.899580306092237 0.205357139451163 0.0773809503941308])
@@ -113,7 +113,7 @@ if bool==true
     f = gcf;
     f.WindowState = 'maximized'; 
     pause(0.5); 
-    exportgraphics(f, "task2p2fig"+num2str(fig(4))+".png", 'Resolution', 300);
+    exportgraphics(f, "figure"+num2str(fig(4))+".png", 'Resolution', 300);
 end
 if leg ~= ""
     legend(leg,'Position',[0.633841768165843 0.899580306092237 0.205357139451163 0.0773809503941308])
@@ -144,7 +144,7 @@ if bool==true
         f = gcf;
         f.WindowState = 'maximized'; 
         pause(0.5); 
-        exportgraphics(f, "task2p2fig"+num2str(fig(5))+".png", 'Resolution', 300);
+        exportgraphics(f, "figure"+num2str(fig(5))+".png", 'Resolution', 300);
 end
 if leg ~= ""
     legend(leg,'Position',[0.485590278957453 0.476462444742479 0.0661458321536577 0.0379023873793621])
@@ -159,7 +159,7 @@ if bool==true
     f = gcf;
     f.WindowState = 'maximized'; 
     pause(0.5); 
-    exportgraphics(f, "task2p2fig"+num2str(fig(6))+".png", 'Resolution', 300);
+    exportgraphics(f, "figure"+num2str(fig(6))+".png", 'Resolution', 300);
 end
 if leg ~= ""
     legend(leg,location="best")
