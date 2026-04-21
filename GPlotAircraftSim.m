@@ -3,7 +3,7 @@
 %FileName: PlotAircraftSim.m
 %Created: 4/07/2026
 
-function PlotAircraftSim(time, aircraft_state_array, control_input_array,fig, col, bool, leg)
+function GPlotAircraftSim(time, aircraft_state_array, control_input_array,fig, col, bool, leg)
 % if you want to save the plots, set bool to 1. default is no save. leg
 % produces generalized legends for like multiple plot cases
 arguments
