@@ -7,6 +7,10 @@ function PlotAircraftSim(time, aircraft_state_array, control_input_array, fig, c
             casename = 'Case 2.2: SLUF Flight';
         elseif fig(1) == 13
             casename = 'Case 2.3: Spiral Mode';
+        elseif fig(1) == 19
+            casename = 'Case 3.0: Doublet Short Sim';
+        elseif fig(1) == 25
+            casename = 'Case 3.0: Doublet Long Sim';
     end
 
     % seperating aircraft state vector and control inputs for plotting
